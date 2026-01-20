@@ -5,6 +5,9 @@ public class Player : MonoBehaviour
     [SerializeField] private float moveSpeed = 10f;
 
     [SerializeField] private float rotationSpeed = 10f;
+
+    private bool Runing;
+    public bool runing() { return Runing; }
     private void Update()
     {
         Vector2 inputVector = new Vector2(0, 0);
@@ -31,6 +34,8 @@ public class Player : MonoBehaviour
         inputVector = inputVector.normalized;
 
         Vector3 moveDir = new Vector3(inputVector.x,0f ,inputVector.y);
+
+        Runing = moveDir != Vector3.zero;
 
         transform.forward = Vector3.Slerp(transform.forward , moveDir ,rotationSpeed * Time.deltaTime);
 
