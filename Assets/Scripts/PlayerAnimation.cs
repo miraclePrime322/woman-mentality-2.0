@@ -5,7 +5,7 @@ public class PlayerAnimation : MonoBehaviour
     [SerializeField] private Player player;
     private Player Player;
     private Animator animator;
-    private const string RUNNING = "runing";
+    private const string RUNNING = "running";
 
     private void Awake()
     {
